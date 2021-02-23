@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+    />
+    <title>Viads | Advertise with us</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Varela Round", sans-serif;
+      }
+      /* Alerts */
+      .alerts {
+        text-align: center;
+      }
+
+      /* NavBar */
+      .myNavBar {
+        background-color: #f4a57e !important;
+        padding: 0 100px;
+      }
+
+      /* Banner */
+      .banner {
+        width: 100%;
+        height: 700px;
+        color: white;
+      }
+      .banner > img {
+        position: relative;
+        height: 700px;
+        width: 100%;
+      }
+      .banner-details {
+        width: 100%;
+        display: flex;
+        position: absolute;
+        height: 700px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .banner-part1,
+      .banner-part2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+      }
+      .banner-part1 {
+        padding-left: 120px;
+        flex-direction: column;
+      }
+      .banner-part1 > h1,
+      p,
+      button {
+        margin: 30px;
+      }
+      .banner-part1 > button {
+        border: none;
+        border-radius: 25px;
+        padding: 10px 20px;
+        background-color: #f4a57e;
+        cursor: pointer;
+        font-weight: bolder;
+        box-shadow: 0px 2px 20px black;
+      }
+      .banner-part1 > button:hover {
+        background-color: #f08955;
+      }
+      .banner-part2 {
+        padding-right: 120px;
+      }
+      .banner-part2 > iframe {
+        width: 90%;
+        height: 55%;
+        border-radius: 25px;
+      }
+
+      /* Clients */
+      .clients {
+        background-color: rgb(245, 245, 245);
+        width: 100%;
+        padding: 20px 110px;
+      }
+      .clients > h3 {
+        text-align: center;
+      }
+      .clients-image {
+        padding: 20px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+      }
+      .clients-image > img {
+        height: 100px;
+        width: 100px;
+      }
+
+      /* Explaination */
+      .explain {
+        margin: 50px 0;
+        display: flex;
+        width: 100%;
+      }
+      .explain-part1,
+      .explain-part2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50%;
+      }
+      .explain-part1 {
+        margin-left: 120px;
+      }
+      .explain-part1 > img {
+        width: 70%;
+        border-radius: 25px;
+      }
+      .explain-part2 {
+        flex-direction: column;
+        margin-right: 120px;
+        padding: 0 50px;
+        text-align: center;
+      }
+      .explain-part2 > div > a {
+        padding: 10px;
+        font-weight: bolder;
+        text-decoration: none;
+        color: black;
+      }
+
+      /* Product */
+      .product {
+        padding-bottom: 30px;
+        display: flex;
+        width: 100%;
+      }
+      .product-part1 {
+        width: 50%;
+        padding: 0 100px;
+      }
+      .product-part1 > div > p {
+        margin: 0;
+        padding: 20px;
+      }
+      .product-part1 > div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid gray;
+      }
+      .product-part2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .product-part2 > img {
+        width: 70%;
+        border-radius: 25px;
+      }
+
+      /* Subscribers */
+      .subscribers {
+        background-color: rgb(245, 245, 245);
+        padding: 70px 0;
+        display: flex;
+        flex-direction: column;
+      }
+      .subscribers-part1 {
+        margin: 0 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .subscribers-part1 > h1 {
+        font-size: 3rem;
+      }
+      .subscribers-part2 {
+        margin: 0 120px;
+        flex-wrap: wrap;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .subscribers-boxes {
+        height: 120px;
+        width: 150px;
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0px 2px 20px rgb(212, 212, 212);
+      }
+      .subscribers-boxes:hover {
+        transform: scale(1.1);
+        transition: 0.1s;
+      }
+      .subscribers-boxes > h1 {
+        font-weight: bolder;
+        color: #f08955;
+      }
+      .subscribers-boxes > p {
+        margin: 0;
+        color: gray;
+      }
+
+      /* How Does it Works */
+      .working {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 50px 0;
+      }
+      .working-part1,
+      .working-part2 {
+        width: 100%;
+        padding: 0 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .working-part1 {
+        flex-direction: column;
+      }
+      .working-part1 > p {
+        font-size: 1.3rem;
+      }
+      .working-blocks {
+        width: 33.33%;
+        padding: 10px;
+        margin: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .working-blocks > h3,
+      p {
+        padding: 10px;
+        margin: 0;
+        text-align: center;
+      }
+      .working-blocks > h3 {
+        font-weight: bolder;
+      }
+
+      /* Verified Authority */
+      .authority {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 50px 120px;
+      }
+      .authority > h1 {
+        font-weight: bolder;
+        margin: 40px 0;
+      }
+      .authority > img {
+        width: 60%;
+      }
+
+      /* All our plans include */
+      .plans-include,
+      .plans-include-part,
+      .plans-include-boxes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .plans-include {
+        margin: 50px 0;
+        padding: 40px 120px;
+        width: 100%;
+      }
+      .plans-include-part {
+        flex-direction: row;
+        color: rgb(78, 78, 78);
+      }
+      .plans-include-boxes {
+        border-radius: 15px;
+        background-color: white;
+        margin: 10px;
+        padding: 20px;
+        box-shadow: 0px 2px 20px rgb(212, 212, 212);
+      }
+      .plans-include-boxes > h4 {
+        text-align: center;
+      }
+      .plans-include-boxes > p {
+        color: grey;
+      }
+
+      /* Customer Testimonials */
+      .customer {
+        box-sizing: border-box;
+      }
+      #customer-para {
+        color: grey;
+      }
+      .customer > h2 {
+        text-align: center;
+      }
+      .customer > p {
+        margin-bottom: 40px;
+      }
+      .carousel-cell {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 28%;
+        height: 250px;
+        margin-right: 50px;
+        border-radius: 5px;
+        counter-increment: carousel-cell;
+        box-shadow: 0px 2px 20px rgb(212, 212, 212);
+      }
+      .carousel-cell > p {
+        color: grey;
+      }
+      .carousel-cell.is-selected {
+        background-color: white;
+      }
+
+      /* List your Product */
+      .list > svg {
+        position: absolute;
+        z-index: -1;
+      }
+      .list {
+        width: 100%;
+        margin-top: 150px;
+      }
+      .list,
+      .list-part1,
+      .list-part1 > form,
+      .list-part2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .list-part1,
+      .list-part2 {
+        position: relative;
+        z-index: 1;
+        background-color: white;
+        width: 40%;
+        box-shadow: 0px 2px 20px rgb(212, 212, 212);
+        border-radius: 15px;
+        padding: 20px;
+        margin-bottom: 10px;
+      }
+      .list-part1 > h2 {
+        color: rgb(99, 99, 99);
+      }
+      .list-part1 > p {
+        color: grey;
+      }
+      form > input {
+        width: 180%;
+        border: none;
+        border: 1px solid gray;
+        border-radius: 5px;
+        padding: 15px 10px;
+        margin: 5px;
+      }
+      form > button {
+        width: 120%;
+        padding: 20px;
+        border: none;
+        border-radius: 50px;
+        box-shadow: 0px 2px 10px rgb(145, 143, 143);
+      }
+      form > button:hover {
+        background-color: #3882f6;
+        color: white;
+      }
+      .list-part2 {
+        flex-direction: row;
+      }
+      .list-part2 > img {
+        margin: 5px;
+        width: 25%;
+        cursor: pointer;
+      }
+
+      /* Learn More */
+      .learn {
+        width: 100%;
+        margin-top: 40px;
+        display: flex;
+      }
+      .learn-part1,
+      .learn-part2 {
+        width: 50%;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 25px;
+        justify-content: center;
+      }
+      .learn-part1:hover,
+      .learn-part2:hover {
+        background-color: grey;
+        color: white;
+        transition: 0.1s ease-in;
+      }
+      .learn-part1 > button,
+      .learn-part2 > button {
+        border: none;
+        width: 30%;
+        padding: 10px;
+        border-radius: 25px;
+      }
+      .learn-part1 > button:hover,
+      .learn-part2 > button:hover {
+        background-color: #3882f6;
+        color: white;
+      }
+
+      /* Footer */
+      footer {
+        padding-top: 20px;
+        background-color: rgb(247, 247, 247);
+        width: 100%;
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+      }
+      .options {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+      }
+      footer p {
+        color: gray;
+        font-size: 0.9rem;
+      }
+      footer a {
+        text-decoration: none;
+      }
+      footer h5 {
+        font-weight: bolder;
+        font-size: 1.1rem;
+      }
+      .options-part1 {
+        width: 25%;
+        text-align: center;
+      }
+      #social-media > a > img {
+        flex-wrap: wrap;
+        height: 40px;
+        margin: 10px;
+      }
+      .options-part2 {
+        border-top: 1px solid gray;
+        border-bottom: 1px solid gray;
+        width: 100%;
+        margin: 0;
+      }
+
+      /* MEDIA QUERY */
+      @media only screen and (max-width: 990px) {
+        /* Navbar */
+        .myNavBar {
+          padding-left: 10px;
+          padding-right: 0;
+        }
+        /* Banner */
+        .banner,
+        .banner > img {
+          height: 600px;
+          height: 600px;
+        }
+        .banner-details {
+          flex-direction: column;
+          margin-top: 150px;
+        }
+        .banner-part1 {
+          padding-left: 1%;
+          width: 100%;
+        }
+        .banner-part1 > h1 {
+          text-align: center;
+        }
+        .banner-part2 {
+          padding-right: 1%;
+          width: 100%;
+        }
+        .banner-part2 > iframe {
+          height: 250%;
+        }
+        /* Clients */
+        .clients {
+          padding: 20px 1%;
+        }
+        .clients-image > img {
+          margin: 3px;
+          width: 10%;
+          height: 10%;
+        }
+        /* Explaination */
+        .explain,
+        .product {
+          flex-direction: column;
+        }
+        .explain-part1,
+        .explain-part2,
+        .product-part1,
+        .product-part2 {
+          width: 100%;
+          padding: 4%;
+        }
+        .explain-part1 {
+          margin-left: 1%;
+        }
+        .explain-part2 {
+          margin-right: 1%;
+        }
+        .explain-part1 > img,
+        .product-part2 > img {
+          width: 95%;
+          padding-bottom: 10px;
+        }
+        /* Subscribers */
+        .subscribers {
+          padding: 4%;
+        }
+        .subscribers-part1,
+        .subscribers-part2 {
+          margin: 0 4%;
+        }
+        .subscribers-part1 > h1 {
+          font-size: 1.4rem;
+          text-align: center;
+        }
+        .subscribers-part1 > img {
+          width: 10%;
+          height: 10%;
+        }
+        .subscribers-part2 {
+          flex-wrap: wrap;
+        }
+        /* How Does it works */
+        .working {
+          margin: 10% 0;
+        }
+        .working-part1,
+        .working-part2 {
+          padding: 0 4%;
+        }
+        .working-part1 > p {
+          font-size: 1rem;
+        }
+        .working-part2 {
+          flex-direction: column;
+        }
+        .working-blocks {
+          width: 100%;
+        }
+        .working-blocks > img {
+          width: 20%;
+          height: 20%;
+        }
+        /* Authority */
+        .authority {
+          margin: 0 4%;
+        }
+        .authority > img {
+          width: 90%;
+        }
+        /* All our plans include */
+        .plans-include {
+          padding: 0 4%;
+        }
+        .plans-include-part {
+          flex-direction: column;
+        }
+        /* Customer Testimonials */
+        .carousel-cell {
+          width: 66%;
+          height: 200px !important;
+          margin-right: 10px;
+          border-radius: 5px;
+          counter-increment: gallery-cell;
+        }
+        /* List your Product */
+        .list > svg {
+          display: none;
+        }
+        .list-part1,
+        .list-part2 {
+          position: relative;
+          bottom: 50px;
+          width: 95%;
+        }
+        form > input {
+          width: 100%;
+        }
+        /* Learn More */
+        .learn {
+          flex-direction: column;
+        }
+        .learn-part1,
+        .learn-part2 {
+          width: 100%;
+        }
+        .learn-part1 > button,
+        .learn-part2 > button {
+          width: 60%;
+        }
+        /* Footer */
+        .options {
+          flex-direction: column;
+        }
+        .options-part1 {
+          width: 100%;
+          padding-top: 10px;
+          border-bottom: 1px solid gray;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="alert alert-primary alert-dismissible fade show m-0 alerts"
+      role="alert"
+    >
+      <strong>Hello Friends,</strong> Now enjoy the best deals in the market
+      with viads, product of digitalboxitin.com
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="alert"
+        aria-label="Close"
+      ></button>
+    </div>
+
+    <!-- NavBar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light myNavBar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Viads</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                More
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Banner -->
+    <div class="banner">
+      <!-- <div class="banner-image"> -->
+      <img src="Images/1.jpg" alt="" />
+      <!-- </div> -->
+      <div class="banner-details">
+        <div class="banner-part1">
+          <h1>We help great products get in front of right people</h1>
+          <p>
+            Get more sales, backers, and exposure by getting listed on the
+            Gadget Flow platform
+          </p>
+          <button>Get Started -></button>
+        </div>
+        <div class="banner-part2">
+          <iframe
+            src="https://www.youtube.com/embed/o9pdho_K16Y"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Clients -->
+    <div class="clients">
+      <h3>
+        Trusted by over 8000 companies including Fortune 500 brands and
+        innovative startups
+      </h3>
+      <div class="clients-image">
+        <img src="Images/clients/1.svg" alt="" />
+        <img
+          src="https://facebookbrand.com/wp-content/uploads/2019/04/f_logo_RGB-Hex-Blue_512.png?w=512&h=512"
+          alt=""
+        />
+        <img src="Images/clients/1.svg" alt="" />
+        <img
+          src="https://facebookbrand.com/wp-content/uploads/2019/04/f_logo_RGB-Hex-Blue_512.png?w=512&h=512"
+          alt=""
+        />
+        <img src="Images/clients/1.svg" alt="" />
+        <img
+          src="https://facebookbrand.com/wp-content/uploads/2019/04/f_logo_RGB-Hex-Blue_512.png?w=512&h=512"
+          alt=""
+        />
+        <img src="Images/clients/1.svg" alt="" />
+        <img
+          src="https://facebookbrand.com/wp-content/uploads/2019/04/f_logo_RGB-Hex-Blue_512.png?w=512&h=512"
+          alt=""
+        />
+        <img src="Images/clients/1.svg" alt="" />
+        <img
+          src="https://facebookbrand.com/wp-content/uploads/2019/04/f_logo_RGB-Hex-Blue_512.png?w=512&h=512"
+          alt=""
+        />
+      </div>
+    </div>
+
+    <!-- Explanation -->
+    <div class="explain">
+      <div class="explain-part1">
+        <img
+          src="https://ik.imagekit.io/upgrad1/marketing-platform-assets/sprites%2Fimages/Mana__1599830413957.png"
+          alt=""
+        />
+      </div>
+      <div class="explain-part2">
+        <h2>What is Gadget Flow?</h2>
+        <p>
+          Gadget Flow is the original product discovery platform for staying up
+          to date with the latest tech, gear, and most incredible crowdfunding
+          campaigns. Now supporting AR & VR, join over 8,000 happy customers and
+          gain exposure, generate sales, or get backers for your project!
+        </p>
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-play-circle"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
+            />
+            <path
+              d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z"
+            />
+          </svg>
+          <a href="#">Watch the video</a>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-truck"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5v-7zm1.294 7.456A1.999 1.999 0 0 1 4.732 11h5.536a2.01 2.01 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456zM12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12v4zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"
+            />
+          </svg>
+          <a href="#">Get the Media Kit</a>
+        </div>
+      </div>
+    </div>
+    <div class="product">
+      <div class="product-part1">
+        <h2>Get your product on Gadget Flow</h2>
+        <div>
+          <p>Boost Sales & Exposure for your Product</p>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="40"
+            height="40"
+            fill="currentColor"
+            class="bi bi-check"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"
+            />
+          </svg>
+        </div>
+        <div>
+          <p>Instantly Increase Brand Awareness</p>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="40"
+            height="40"
+            fill="currentColor"
+            class="bi bi-check"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"
+            />
+          </svg>
+        </div>
+        <div>
+          <p>Advertise in Front of Targeted Consumers</p>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="40"
+            height="40"
+            fill="currentColor"
+            class="bi bi-check"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"
+            />
+          </svg>
+        </div>
+        <div>
+          <p>World Class 24/7 Customer Support</p>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="40"
+            height="40"
+            fill="currentColor"
+            class="bi bi-check"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"
+            />
+          </svg>
+        </div>
+        <div>
+          <p>Advertise your Crowdfunding Project</p>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="40"
+            height="40"
+            fill="currentColor"
+            class="bi bi-check"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"
+            />
+          </svg>
+        </div>
+      </div>
+      <div class="product-part2">
+        <img
+          src="https://ik.imagekit.io/upgrad1/marketing-platform-assets/sprites%2Fimages/Mana__1599830413957.png"
+          alt=""
+        />
+      </div>
+    </div>
+
+    <!-- Subscribers -->
+    <div class="subscribers">
+      <div class="subscribers-part1">
+        <h1>Imagine your product in front of all these people</h1>
+        <img
+          src="https://media.tenor.com/images/aa6584c0682c4d6713d691df579201b2/tenor.gif"
+          alt=""
+        />
+      </div>
+      <div class="subscribers-part2">
+        <div class="subscribers-boxes">
+          <h1>31M</h1>
+          <p>Monthly Reach</p>
+        </div>
+        <div class="subscribers-boxes">
+          <h1>13M</h1>
+          <p>Platform Visit</p>
+        </div>
+        <div class="subscribers-boxes">
+          <h1>1.2M</h1>
+          <p>Followers</p>
+        </div>
+        <div class="subscribers-boxes">
+          <h1>1.4M</h1>
+          <p>App Downloads</p>
+        </div>
+        <div class="subscribers-boxes">
+          <h1>225K</h1>
+          <p>Subscribers</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- How Does it Works -->
+    <div class="working">
+      <div class="working-part1">
+        <h1>How does it works?</h1>
+        <p>
+          Great flow works great with KickStarter Projects, Indegogo Live and
+          In-Demand campaigns, Shopify based stores, Amazon stores and your own
+          e-commerce website.
+        </p>
+      </div>
+      <div class="working-part2">
+        <div class="working-blocks">
+          <img src="Images/clients/1.svg" alt="" />
+          <h3>Submission</h3>
+          <p>
+            Secure your placement on Gadget Flow by submitting your product 5-30
+            days before your desired start date.
+          </p>
+        </div>
+        <div class="working-blocks">
+          <img src="Images/clients/1.svg" alt="" />
+          <h3>Preparation</h3>
+          <p>
+            Upload your content to your dashboard. Our editorial team will
+            generate a preview within 48 hours.
+          </p>
+        </div>
+        <div class="working-blocks">
+          <img src="Images/clients/1.svg" alt="" />
+          <h3>Promotion</h3>
+          <p>
+            Once your listing is live, we’ll start promoting it on social media,
+            mobile apps, and newsletters.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!--Verified Authority -->
+    <div class="authority">
+      <h1>Verified Authority</h1>
+      <img
+        src="https://thegadgetflow.com/wp-content/themes/gadgetflow-next/images/submit/submit_autho.png"
+        alt=""
+      />
+    </div>
+
+    <!-- Choose your Plans -->
+    <div class="plans"></div>
+
+    <!-- All our plans include -->
+    <div class="plans-include">
+      <h2>All our plans include</h2>
+      <p>
+        You can view all of our features <span><a href="#">here</a></span> and
+        the promotion timeline <span><a href="#">here</a></span>
+      </p>
+      <div class="plans-include-part">
+        <div class="plans-include-boxes">
+          <h4>24/7 Phone, Email and Chat Support</h4>
+          <p>
+            Our happiness team is here to assist you with any questions you may
+            have about our platform or your dashboard.
+          </p>
+        </div>
+        <div class="plans-include-boxes">
+          <h4>Satisfaction & Relaunch Guarantee</h4>
+          <p>
+            We’ll repeat all the promotions free of charge if you are not
+            satisfied with the results or your project fails.
+          </p>
+        </div>
+        <div class="plans-include-boxes">
+          <h4>Lifetime Access to Our Marketing Vault</h4>
+          <p>
+            Explore all of our strategic partnerships with agencies and the
+            media that will help you boost your sales.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Customer Testimonials -->
+    <div class="customer">
+      <h2>&#10084;&#65039; Customer Testimonials</h2>
+      <p id="customer-para">
+        Here's what our customers have to say about viads
+      </p>
+      <div class="carousel" data-flickity='{ "groupCells": true }'>
+        <div class="carousel-cell">
+          <h3>Krishna Biswakarma</h3>
+          <h5>CEO of MyWorld</h5>
+          <p>
+            "Really nice experience, great communication, superb outcome and
+            9.5:1 ROI. They simply know what they do, definitely recommend
+            them!"
+          </p>
+        </div>
+        <div class="carousel-cell">
+          <h3>Krishna Biswakarma</h3>
+          <h5>CEO of MyWorld</h5>
+          <p>
+            "Really nice experience, great communication, superb outcome and
+            9.5:1 ROI. They simply know what they do, definitely recommend
+            them!"
+          </p>
+        </div>
+        <div class="carousel-cell">
+          <h3>Krishna Biswakarma</h3>
+          <h5>CEO of MyWorld</h5>
+          <p>
+            "Really nice experience, great communication, superb outcome and
+            9.5:1 ROI. They simply know what they do, definitely recommend
+            them!"
+          </p>
+        </div>
+        <div class="carousel-cell">
+          <h3>Krishna Biswakarma</h3>
+          <h5>CEO of MyWorld</h5>
+          <p>
+            "Really nice experience, great communication, superb outcome and
+            9.5:1 ROI. They simply know what they do, definitely recommend
+            them!"
+          </p>
+        </div>
+        <div class="carousel-cell">
+          <h3>Krishna Biswakarma</h3>
+          <h5>CEO of MyWorld</h5>
+          <p>
+            "Really nice experience, great communication, superb outcome and
+            9.5:1 ROI. They simply know what they do, definitely recommend
+            them!"
+          </p>
+        </div>
+        <div class="carousel-cell">
+          <h3>Krishna Biswakarma</h3>
+          <h5>CEO of MyWorld</h5>
+          <p>
+            "Really nice experience, great communication, superb outcome and
+            9.5:1 ROI. They simply know what they do, definitely recommend
+            them!"
+          </p>
+        </div>
+        <div class="carousel-cell">
+          <h3>Krishna Biswakarma</h3>
+          <h5>CEO of MyWorld</h5>
+          <p>
+            "Really nice experience, great communication, superb outcome and
+            9.5:1 ROI. They simply know what they do, definitely recommend
+            them!"
+          </p>
+        </div>
+        <div class="carousel-cell">
+          <h3>Krishna Biswakarma</h3>
+          <h5>CEO of MyWorld</h5>
+          <p>
+            "Really nice experience, great communication, superb outcome and
+            9.5:1 ROI. They simply know what they do, definitely recommend
+            them!"
+          </p>
+        </div>
+        <div class="carousel-cell">
+          <h3>Krishna Biswakarma</h3>
+          <h5>CEO of MyWorld</h5>
+          <p>
+            "Really nice experience, great communication, superb outcome and
+            9.5:1 ROI. They simply know what they do, definitely recommend
+            them!"
+          </p>
+        </div>
+        <div class="carousel-cell">
+          <h3>Krishna Biswakarma</h3>
+          <h5>CEO of MyWorld</h5>
+          <p>
+            "Really nice experience, great communication, superb outcome and
+            9.5:1 ROI. They simply know what they do, definitely recommend
+            them!"
+          </p>
+        </div>
+        <div class="carousel-cell">
+          <h3>Krishna Biswakarma</h3>
+          <h5>CEO of MyWorld</h5>
+          <p>
+            "Really nice experience, great communication, superb outcome and
+            9.5:1 ROI. They simply know what they do, definitely recommend
+            them!"
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- List your product -->
+    <div class="list">
+      <svg
+        height="100%"
+        width="100%"
+        id="bg-svg"
+        viewBox="0 0 1440 700"
+        xmlns="http://www.w3.org/2000/svg"
+        class="transition duration-300 ease-in-out delay-150"
+      >
+        <path
+          d="M 0,700 C 0,700 0,175 0,175 C 107.28571428571428,141.53571428571428 214.57142857142856,108.07142857142857 339,115 C 463.42857142857144,121.92857142857143 604.9999999999999,169.25 736,168 C 867.0000000000001,166.75 987.4285714285713,116.92857142857143 1103,110 C 1218.5714285714287,103.07142857142857 1329.2857142857142,139.03571428571428 1440,175 C 1440,175 1440,700 1440,700 Z"
+          stroke="none"
+          stroke-width="0"
+          fill="#0693e366"
+          class="transition-all duration-300 ease-in-out delay-150"
+        ></path>
+        <path
+          d="M 0,700 C 0,700 0,350 0,350 C 95.03571428571428,360.1428571428571 190.07142857142856,370.2857142857143 317,364 C 443.92857142857144,357.7142857142857 602.7499999999999,335 741,324 C 879.2500000000001,313 996.9285714285716,313.7142857142857 1110,320 C 1223.0714285714284,326.2857142857143 1331.5357142857142,338.1428571428571 1440,350 C 1440,350 1440,700 1440,700 Z"
+          stroke="none"
+          stroke-width="0"
+          fill="#0693e388"
+          class="transition-all duration-300 ease-in-out delay-150"
+        ></path>
+        <path
+          d="M 0,700 C 0,700 0,525 0,525 C 80.89285714285714,497.32142857142856 161.78571428571428,469.64285714285717 294,475 C 426.2142857142857,480.35714285714283 609.7499999999999,518.75 752,524 C 894.2500000000001,529.25 995.2142857142858,501.35714285714283 1103,496 C 1210.7857142857142,490.64285714285717 1325.392857142857,507.82142857142856 1440,525 C 1440,525 1440,700 1440,700 Z"
+          stroke="none"
+          stroke-width="0"
+          fill="#0693e3ff"
+          class="transition-all duration-300 ease-in-out delay-150"
+        ></path>
+      </svg>
+      <div class="list-part1">
+        <h2>Let's get Started</h2>
+        <p>
+          For every order we will plant a tree.
+          <strong><u>View our forest</u></strong
+          >. It just takes 30s to list your product.
+        </p>
+        <form action="">
+          <input type="text" placeholder="Your Name&#40;e.g. Krishna&#41;" />
+          <input
+            type="text"
+            placeholder="Your Email&#40;e.g. hello@example.com&#41;"
+          />
+          <button>Next>>List your Product</button>
+        </form>
+        <p>&#128293;39 New Customer Signed Up Last Week</p>
+      </div>
+      <div class="list-part2">
+        <img
+          src="https://seal.digicert.com/seals/cascade/?tag=4sWTawNM&referer=thegadgetflow.com&lang=en&format=png&seal=15&size=s"
+          alt=""
+        />
+        <img
+          src="https://thegadgetflow.com/wp-content/themes/gadgetflow-next/images/submit/paypal.png"
+          alt=""
+        />
+        <img
+          src="https://thegadgetflow.com/wp-content/themes/gadgetflow-next/images/submit/ssl.png"
+          alt=""
+        />
+      </div>
+    </div>
+
+    <!-- Learn More -->
+    <div class="learn">
+      <div class="learn-part1">
+        <h2>Managed Services</h2>
+        <p>Checkout our crowdfunding and eCommerce managed services.</p>
+        <button>Learn More</button>
+      </div>
+      <div class="learn-part2">
+        <h2>Unboxing Series</h2>
+        <p>
+          Get your product or crowdfunding project on our unboxing video segment
+          with our host Jonny Caplan.
+        </p>
+        <button>Learn More</button>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="options">
+        <div class="options-part1">
+          <h5>Company</h5>
+          <p><a href="">About Us</a></p>
+          <p><a href="">Contact Us</a></p>
+          <p><a href="">Careers</a></p>
+          <p><a href="">Help Center</a></p>
+          <p><a href="">Press</a></p>
+          <p><a href="">Brand Assets</a></p>
+        </div>
+        <div class="options-part1">
+          <h5>Platform</h5>
+          <p><a href="">Add your Product</a></p>
+          <p><a href="">Agency</a></p>
+          <p><a href="">Affiliate Program</a></p>
+          <p><a href="">Status</a></p>
+          <p><a href="">Podcast</a></p>
+          <p><a href="">Sitemap</a></p>
+        </div>
+        <div class="options-part1">
+          <h5>Legal</h5>
+          <p><a href="">Terms of Use</a></p>
+          <p><a href="">Privacy Policy</a></p>
+          <p><a href="">Cookie Policy</a></p>
+          <p><a href="">Fact Checking</a></p>
+          <p><a href="">Ethics Policy</a></p>
+          <p><a href="">Corrections Policy</a></p>
+        </div>
+        <div class="options-part1" id="social-media">
+          <h5>Social Media</h5>
+          <a href=""
+            ><img
+              src="https://cdn.freebiesupply.com/logos/large/2x/facebook-logo-2019.png"
+              alt=""
+          /></a>
+          <a href=""
+            ><img
+              src="https://cdn.freebiesupply.com/logos/large/2x/facebook-logo-2019.png"
+              alt=""
+          /></a>
+          <a href=""
+            ><img
+              src="https://cdn.freebiesupply.com/logos/large/2x/facebook-logo-2019.png"
+              alt=""
+          /></a>
+        </div>
+      </div>
+      <div class="options-part2">
+        <p>&copy;2021 DigitalBoxItIn</p>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+  </body>
+</html>
